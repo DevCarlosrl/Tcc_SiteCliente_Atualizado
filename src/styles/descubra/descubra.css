@@ -1,0 +1,320 @@
+.img_container {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://plus.unsplash.com/premium_photo-1664300897489-fd98eee64faf?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-attachment: fixed;
+    height: 50vh;
+    z-index: 1; 
+}
+
+.container {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 0;
+    align-items: flex-start;
+}
+
+/* --- ESTILIZAÇÃO DA SIDEBAR COM POSIÇÃO ORIGINAL --- */
+
+.sidebar {
+    width: 280px;
+    background-color: var(--cor0);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #EAE0D5;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    /* As 4 linhas abaixo foram removidas para restaurar a posição original */
+    /* position: sticky; */
+    /* top: 120px; */
+    /* max-height: calc(100vh - 140px); */
+    /* overflow-y: auto; */
+}
+
+.sidebar h3 {
+    font-size: 1.1rem;
+    color: var(--cor4);
+    margin-top: 20px;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #EAE0D5;
+}
+
+.sidebar h3:first-child {
+    margin-top: 0;
+}
+
+.sidebar label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--cor4);
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.sidebar input[type="text"],
+.sidebar input[type="number"],
+.sidebar select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    font-size: 0.9rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sidebar input:focus,
+.sidebar select:focus {
+    outline: none;
+    border-color: var(--cor3);
+    box-shadow: 0 0 0 3px rgba(83, 56, 42, 0.1);
+}
+
+/* Estilização Customizada dos Checkboxes */
+.sidebar .checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.sidebar .checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.sidebar .checkbox-group input[type="checkbox"] {
+    display: none;
+}
+
+/* Criação do checkbox customizado */
+.sidebar .checkbox-group label span::before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    margin-right: 8px;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    vertical-align: middle;
+}
+
+/* Estilo do checkbox quando selecionado */
+.sidebar .checkbox-group input[type="checkbox"]:checked + span::before {
+    background-color: var(--cor3);
+    border-color: var(--cor3);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z'/%3E%3C/svg%3E");
+    background-size: cover;
+}
+
+/* Estilização dos Botões */
+.sidebar button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#filter-button {
+    background-color: var(--cor3);
+    color: var(--cor0);
+}
+
+#filter-button:hover {
+    background-color: #3e2a1f;
+    transform: translateY(-2px);
+}
+
+#reset-button {
+    background-color: transparent;
+    color: var(--cor3);
+    border: 2px solid var(--cor3);
+}
+
+#reset-button:hover {
+    background-color: var(--cor2);
+    border-color: var(--cor2);
+}
+
+/* --- RESTANTE DO CSS --- */
+.products {
+    flex-grow: 1;
+    margin-top: 40px;
+}
+
+
+.products a{
+  color: #000000;
+}
+
+.products h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+     position: relative; 
+     opacity: 1;
+     transition: opacity 0.3s ease;
+}
+
+.product-card.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 220px;
+    height: 300px;
+}
+
+.product-card-content {
+    padding: 15px;
+}
+
+.product-card-title {
+    font-size: 16px;
+    margin: 0 0 5px;
+    font-weight: bold;
+}
+
+.product-card-price {
+    font-size: 14px;
+    color: #007BFF;
+    margin: 0 0 5px;
+}
+
+.product-card-old-price {
+    text-decoration: line-through;
+    color: #aaa;
+    font-size: 12px;
+}
+
+.product-card-new {
+  position: absolute;
+  background-color: #28a745;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 8px;
+  top: 10px;
+  left: 10px;
+  transition: .5 all ease;
+}
+
+
+
+.footer {
+  background-color: #f9e0c2;
+
+}
+.footer-newsletter {
+  text-align: center;
+  padding: 40px;
+  background-color: #f9e0c2;
+}
+.footer-newsletter h2 {
+  font-size: 26px;
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+.footer-newsletter p {
+  margin: 0 0 20px;
+  color: #666;
+  font-size: 14px;
+}
+.footer-newsletter input[type="email"] {
+  padding: 10px;
+  width: 300px;
+  border: none;
+  font-size: 16px;
+  border-bottom: 1px solid #666;
+  outline: none;
+  background-color: transparent;
+}
+.footer-newsletter button {
+  padding: 12px 24px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  top: -10px;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  background-color: #fff;
+  color: #333;
+}
+.footer-column {
+  width: 25%;
+}
+.footer-column h3 {
+  font-size: 16px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #333;
+}
+.footer-column ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-column ul li {
+  margin-bottom: 8px;
+  color: #666;
+  font-size: 14px;
+}
+.footer-column ul li a {
+  text-decoration: none;
+  color: #666;
+  font-size: 14px;
+}
+.footer-column ul li a:hover {
+  color: #333;
+}
+.footer-column address {
+  font-size: 14px;
+  color: #666;
+}
+.footer-column address p {
+  margin: 0;
+}
+.footer-bottom {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #f0f0f0;
+  font-size: 12px;
+  color: #666;
+}
