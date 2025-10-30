@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <link rel="stylesheet" href="../src/styles/carrinho/carrinho.css"> 
+    <link rel="stylesheet" href="../src/styles/global/style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="main">
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="../src/assets/EditoraLogo.png" alt="Logo">
+            </div>
+            <ul class="menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="descubra.html">Descubra</a></li>
+                <li><a href="#">????</a></li>
+            </ul>
+            <ul class="login">
+                <li><a href="#"><i class="fas fa-search"></i></a></li>
+                <li><a href="carrinho.html"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a></li>
+                <div class="profile-dropdown">
+                    <div onclick="toggle()" class="profile-dropdown-btn">
+                        <div class="profile-img"><i class="status-circle "></i></div>
+                        <span>Login <i class="fa-solid fa-angle-down"></i></span>
+                    </div>
+                    <ul class="profile-dropdown-list">
+                        <li class="profile-dropdown-list-item">
+                            <a href="login.html">
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                <span class="login-a-dropdown">Login</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="cart-container">
+        <h1>Seu Carrinho</h1>
+        
+        <div class="cart-layout">
+            <section class="cart-items-section">
+                <div class="cart-header">
+                    <div class="header-product">Produto</div>
+                    <div class="header-quantity">Quantidade</div>
+                    <div class="header-total">Total</div>
+                    <div class="header-remove"></div>
+                </div>
+
+                <div id="cart-items-list">
+                    <div class="cart-item">
+                        <div class="item-product">
+                            <img src="https://m.media-amazon.com/images/I/511+-lOOtsL._SY445_SX342_.jpg" alt="Capa do Livro O Hobbit" class="product-image">
+                            <div class="product-details">
+                                <span class="product-title">O Hobbit</span>
+                                <span class="product-author">J.R.R. Tolkien</span>
+                                <span class="product-price-mobile">R$ 43,76</span>
+                            </div>
+                        </div>
+                        <div class="item-quantity">
+                            <button class="quantity-btn" type="button">-</button>
+                            <input type="text" class="quantity-input" value="1" readonly>
+                            <button class="quantity-btn" type="button">+</button>
+                        </div>
+                        <div class="item-total">
+                            <span>R$ 43,76</span>
+                        </div>
+                        <div class="item-remove">
+                            <button class="remove-btn">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                    </div>
+
+                <div class="cart-actions">
+                    <a href="descubra.html" class="action-link">
+                        <i class="fas fa-arrow-left"></i> Continuar Comprando
+                    </a>
+                    <a href="?acao=clear" class="action-link-danger">Limpar Carrinho</a>
+                </div>
+            </section>
+
+            <aside class="cart-summary-section">
+                <div class="summary-box">
+                    <h2>Resumo da Compra</h2>
+                    <div class="summary-line">
+                        <span>Sub-total</span>
+                        <span>R$ 43,76</span>
+                    </div>
+                    <div class="summary-line">
+                        <span>Frete</span>
+                        <span class="frete-gratis">Grátis</span>
+                    </div>
+                    <div class="summary-divider"></div>
+                    <div class="summary-total">
+                        <span>Total</span>
+                        <span>R$ 43,76</span>
+                    </div>
+                    <div class="summary-actions">
+                        <button type="submit" class="btn-primary">Finalizar Compra</button>
+                        <button type="button" class="btn-secondary">Alugar Produto</button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+    <script src="../src/js/global/script.js"></script>
+</body>
+</html>
