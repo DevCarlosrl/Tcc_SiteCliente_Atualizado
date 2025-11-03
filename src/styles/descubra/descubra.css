@@ -59,7 +59,7 @@
     margin-bottom: 15px;
     border-radius: 8px;
     border: 1px solid #ddd;
-    background-color: #fff;
+    background-color: rgb(252, 244, 230);
     font-size: 0.9rem;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
