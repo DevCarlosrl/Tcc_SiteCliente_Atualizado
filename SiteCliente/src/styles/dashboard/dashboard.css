@@ -643,15 +643,64 @@ main .content-panel.active {
 
 .divTable table, .divTable tbody{
 	width: 100%;
+	border-radius: 5px;
 }
 
 .divTable th {
-  border: 1px solid #ddd; /* Adiciona uma borda fina */
-  padding: 8px; /* Espaçamento interno */
+  padding: 10px; /* Espaçamento interno */
   text-align: center; /* Alinha o texto à esquerda */
+  color: var(--dark);
 }
 
 .divTable td {
   padding: 8px; /* Espaçamento interno */
   text-align: center; /* Alinha o texto à esquerda */
+  color: var(--dark);
+}
+
+.divTable td img {
+	border-radius: 5px;
+	width: 75px;
+}
+
+.divTable form select{
+	padding: 5px;
+	background-color: var(--grey);
+	border: 1px solid var(--dark-grey);
+	border-radius: 5px;
+	color: var(--dark);
+	transition: 0.3s all ease;
+	cursor: pointer;
+}
+
+.divTable form select:hover{
+	    opacity: 0.8;
+}
+
+.divTable form button{
+	padding: 5px;
+	background-color: var(--grey);
+	border: 1px solid var(--dark-grey);
+	border-radius: 5px;
+	color: var(--dark);
+	transition: 0.3s all ease;
+	cursor: pointer;
+}
+
+.divTable form .btn-atualizar{
+	background-color: #6fd34a;
+}
+
+.divTable form .btn-danger{
+	background-color: #e4504e;
+}
+
+.divTable form .btn-editar{
+	background-color: var(--dark-grey);
+}
+
+.divTable form .btn-atualizar:hover, 
+.divTable form .btn-danger:hover,
+.divTable form .btn-editar:hover{
+	opacity: 0.9;
 }

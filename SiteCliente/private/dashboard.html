@@ -5,10 +5,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-	<!-- My CSS -->
 	<link rel="stylesheet" href="../src/styles/dashboard/dashboard.css">
 
 	<title>Dashboard</title>
@@ -18,7 +15,7 @@
 
 	<!-- SIDEBAR -->
 	<section id="sidebar">
-		<a href="#" class="brand">
+		<a href="dashboard.html" class="brand">
 			<i class='bx bxs-smile'></i>
 			<span class="text">Editora transformar</span>
 		</a>
@@ -51,7 +48,7 @@
 			</li>
 		</ul>
 		<ul class="side-menu">
-			<li>
+			<li data-target="livro">
 				<a href="#">
 					<i class='bx bxs-cog' ></i>
 					<span class="text">Livros
@@ -112,7 +109,7 @@
 					</div>
 					<a href="#" class="btn-download">
 						<i class='bx bxs-cloud-download' ></i>
-						<span class="text">Download PDF</span>
+						<span class="text">Emitir Relatório</span>
 					</a>
 				</div>
 				<ul class="box-info">
@@ -164,32 +161,32 @@
 								</tr>
 								<tr>
 									<td>
-										<img src="../src/assets/perfil.jpg">
-										<p>Carlos Souza</p>
+										<img src="https://media-gig4-2.cdn.whatsapp.net/v/t61.24694-24/564901704_787543887510890_1733443778075985233_n.jpg?ccb=11-4&oh=01_Q5Aa2wFPKFhBEYpmrXHtwvnKSm_6frjtNUZPfyjH-1Flms8MAA&oe=6912015E&_nc_sid=5e03e0&_nc_cat=107">
+										<p>Miguel Viado</p>
 									</td>
 									<td>31-12-2024</td>
 									<td><span class="status pending">Pendencia</span></td>
 								</tr>
 								<tr>
 									<td>
-										<img src="../src/assets/perfil.jpg">
-										<p>Maria Santos</p>
+										<img src="https://media-gig4-2.cdn.whatsapp.net/v/t61.24694-24/554331875_788633127119832_8510337556921964911_n.jpg?ccb=11-4&oh=01_Q5Aa2wFr40Pnl16Prw6V2RW0nW8vax-N3oHbVZFPsiGp8J-K5g&oe=6911F560&_nc_sid=5e03e0&_nc_cat=104">
+										<p>Kayque Ladeira</p>
 									</td>
 									<td>31-12-2024</td>
 									<td><span class="status process">Em Processo</span></td>
 								</tr>
 								<tr>
 									<td>
-										<img src="../src/assets/perfil.jpg">
-										<p>João Pereira</p>
+										<img src="https://media-gig4-2.cdn.whatsapp.net/v/t61.24694-24/573908005_1205165451423869_7075581386137170818_n.jpg?ccb=11-4&oh=01_Q5Aa2wFQN0feGoTRtiqmtxCKdrXfnNHqFwMZGRbHcUiPjnB8IQ&oe=6911F8BA&_nc_sid=5e03e0&_nc_cat=110">
+										<p>João Viado</p>
 									</td>
 									<td>31-12-2024</td>
 									<td><span class="status pending">Pendencia</span></td>
 								</tr>
 								<tr>
 									<td>
-										<img src="../src/assets/perfil.jpg">
-										<p>Pedro Lima</p>
+										<img src="https://media-gig4-2.cdn.whatsapp.net/v/t61.24694-24/505217750_4212916452325619_7093847948749693855_n.jpg?ccb=11-4&oh=01_Q5Aa2wHMW11nG9Mtri-8V8yu5mauWojDNRihIIAtC01ibXwbpw&oe=69121800&_nc_sid=5e03e0&_nc_cat=108">
+										<p>Breno Traira</p>
 									</td>
 									<td>31-12-2024</td>
 									<td><span class="status completed">Completo</span></td>
@@ -228,7 +225,9 @@
 					</div>
 				</div>
 			</div>
-			
+<!---------------------------------------------------------------------------------------- PEDIDOS -------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------- ####### -------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------- ####### -------------------------------------------------------------------->
 			<div id="pedidos" class="content-panel">
                 <div class="head-title">
                     <div class="left">
@@ -241,7 +240,7 @@
                     </div>					
 					<a href="#" class="btn-download">
 						<i class='bx bxs-cloud-download' ></i>
-						<span class="text">Download PDF</span>
+						<span class="text">Emitir Relatório</span>
 					</a>
                 </div>
                 <div class="tabela_pedidos">
@@ -257,6 +256,10 @@
 				    <div class="filtro-grupo">
 						<label for="filtro_data">Filtrar por Data:</label>
 						<input type="date" id="filtro_data" name="filtro_data">
+					</div>
+				    <div class="filtro-grupo">
+						<label for="filtro_status">Filtrar por Status:</label>
+						<input type="date" id="filtro_status" name="filtro_status">
 					</div>
 					<button type="submit">Filtrar</button>
 					<button type="reset">Reset</button>
@@ -287,8 +290,7 @@
 							<td>31-12-2024</td>
 							<td>20:40:18</td>
 							<td>Pendente</td>
- <td class="acao">
-                                <!-- Formulário para atualizar o status -->
+							<td class="acao">
                                 <form method="POST" style="display: inline;">
                                     <input type="hidden" name="pedido_id" value="20">
                                     <select name="status">
@@ -296,10 +298,9 @@
                                         <option value="enviado" >Enviado</option>
                                         <option value="entregue" >Entregue</option>
                                     </select>
-                                    <button type="submit">Atualizar</button>
+                                    <button class="btn-atualizar" type="submit">Atualizar</button>
                                 </form>
 
-                                <!-- Formulário para remover o pedido -->
                                 <form method="POST" style="display: inline;">
                                     <input type="hidden" name="remover_pedido_id" value="20">
                                     <button type="submit" class="btn-danger">Remover</button>
@@ -315,8 +316,7 @@
 							<td>31-12-2024</td>
 							<td>20:40:18</td>
 							<td>Enviado</td>
- <td class="acao">
-                                <!-- Formulário para atualizar o status -->
+ 							<td class="acao">
                                 <form method="POST" style="display: inline;">
                                     <input type="hidden" name="pedido_id" value="20">
                                     <select name="status">
@@ -324,16 +324,42 @@
                                         <option value="enviado" >Enviado</option>
                                         <option value="entregue" >Entregue</option>
                                     </select>
-                                    <button type="submit">Atualizar</button>
+                                    <button class="btn-atualizar" type="submit">Atualizar</button>
                                 </form>
 
-                                <!-- Formulário para remover o pedido -->
                                 <form method="POST" style="display: inline;">
                                     <input type="hidden" name="remover_pedido_id" value="20">
                                     <button type="submit" class="btn-danger">Remover</button>
                                 </form>
                             </td>
                         </tr>
+
+						<tr>
+							<td>2</td>
+							<td>Matues</td>
+							<td>TalLivro</td>
+							<td>17</td>
+							<td>31-12-2024</td>
+							<td>20:40:18</td>
+							<td>Enviado</td>
+  							<td class="acao">
+                                <form method="POST" style="display: inline;">
+                                    <input type="hidden" name="pedido_id" value="20">
+                                    <select name="status">
+                                        <option value="pendente" selected>Pendente</option>
+                                        <option value="enviado" >Enviado</option>
+                                        <option value="entregue" >Entregue</option>
+                                    </select>
+                                    <button class="btn-atualizar" type="submit">Atualizar</button>
+                                </form>
+
+                                <form method="POST" style="display: inline;">
+                                    <input type="hidden" name="remover_pedido_id" value="20">
+                                    <button type="submit" class="btn-danger">Remover</button>
+                                </form>
+                            </td>
+                        </tr>
+						
 					</tbody>
 					</table>
 					
@@ -341,6 +367,9 @@
         </div>
     </div>
 			
+<!---------------------------------------------------------------------------------------- ALUGUEL -------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------- ####### -------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------- ####### -------------------------------------------------------------------->
 			<div id="aluguel" class="content-panel">
                 <div class="head-title">
                     <div class="left">
@@ -353,11 +382,82 @@
                     </div>
 					<a href="#" class="btn-download">
 						<i class='bx bxs-cloud-download' ></i>
-						<span class="text">Download PDF</span>
+						<span class="text">Emitir Relatório</span>
 					</a>
                 </div>
-                <h2>Sua página de Aluguel</h2>
+
+				 <div class="tabela_pedidos">
+				 <form action="" method="GET" class="form-filtro">
+					<div class="filtro-grupo">
+						<label for="filtro_idAluguel">Filtrar por ID do Aluguel:</label>
+						<input type="number" id="filtro_idAluguel" name="filtro_idAluguel">
+					</div>
+				<div class="filtro-grupo">
+					   <label for="filtro_usuario">Filtrar por Usuário:</label>
+					   <input type="text" id="filtro_usuario" name="filtro_usuario">
+					</div>
+				    <div class="filtro-grupo">
+						<label for="filtro_idLivro">Filtrar por Livro ID:</label>
+						<input type="number" id="filtro_idLivro" name="filtro_idLivro">
+					</div>
+					<div class="filtro-grupo">
+						<label for="filtro_data_saida">Filtrar por Data de Saída:</label>
+						<input type="date" id="filtro_data_saida" name="filtro_data_saida">
+					</div>
+				    <div class="filtro-grupo">
+						<label for="filtro_data_entrega">Filtrar por Data de Entrega:</label>
+						<input type="date" id="filtro_data_entrega" name="filtro_data_entrega">
+					</div>
+					<button type="submit">Filtrar</button>
+					<button type="reset">Reset</button>
+				</form>
+				</div>
+
+								<div class="divTable">
+					<table>
+						<thead>
+							<tr>
+								<th>Id do Aluguel</th>
+								<th>Usuário</th>
+								<th>Id do Livro </th>
+								<th>Data da Saída</th>
+								<th>Data da Entrega</th>
+								<th>Quantidades</th>
+								<th>Ação</th>
+							</tr>
+						</thead>
+						
+						<tbody>
+						<tr>
+							<td>1</td>
+							<td>Souza</td>
+							<td>5756</td>
+							<td>31-12-2024</td>
+							<td>01-01-2025</td>
+							<td>5</td>
+							<td class="acao">
+
+                                <form method="POST" style="display: inline;">
+                                    <input type="hidden" name="remover_pedido_id" value="20">
+                                    <button type="submit" class="btn-danger">Remover</button>
+                                </form>
+                            </td>
+                        </tr>
+                                </form>
+
+                            </td>
+                        </tr>
+						
+					</tbody>
+					</table>
+					
+					
+        </div>
             </div> 
+
+<!---------------------------------------------------------------------------------------- CADASTRO -------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------- ####### -------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------- ####### -------------------------------------------------------------------->
 			<div id="painel" class="content-panel">
                 <div class="head-title">
                     <div class="left">
@@ -370,16 +470,149 @@
                     </div>
 					<a href="#" class="btn-download">
 						<i class='bx bxs-cloud-download' ></i>
-						<span class="text">Download PDF</span>
+						<span class="text">Emitir Relatório</span>
 					</a>
                 </div>
-                <h2>Sua página de Cadastro</h2>
-            </div> <div id="livros" class="content-panel">
+                <div class="tabela_pedidos">
+				 <form action="" method="GET" class="form-filtro">
+					<div class="filtro-grupo">
+						<label for="filtro_id">Filtrar por ID:</label>
+						<input type="number" id="filtro_id" name="filtro_id">
+					</div>
+				<div class="filtro-grupo">
+					   <label for="filtro_usuario">Filtrar por Usuário:</label>
+					   <input type="text" id="filtro_usuario" name="filtro_usuario">
+					</div>
+					<div class="filtro-grupo">
+						<label for="filtro_nivel">Filtrar por Nível:</label>
+						<input type="text" id="filtro_nivel" name="filtro_nivel">
+					</div>
+				    <div class="filtro-grupo">
+						<label for="filtro_email">Filtrar por Email:</label>
+						<input type="email" id="filtro_email" name="filtro_email">
+					</div>
+				    <div class="filtro-grupo">
+						<label for="filtro_dataCadastro">Filtrar por Data de Cadastro:</label>
+						<input type="date" id="filtro_dataCadastro" name="filtro_dataCadastro">
+					</div>
+					<button type="submit">Filtrar</button>
+					<button type="reset">Reset</button>
+				</form>
+				</div>
+				
+				<div class="divTable">
+					<table>
+						<thead>
+							<tr>
+								<th>Id do Usuario</th>
+								<th>Usuário</th>
+								<th>Nível</th>
+								<th>Email</th>
+								<th>Senha</th>
+								<th>Data de Cadastro</th>
+								<th>Ação</th>
+							</tr>
+						</thead>
+						
+						<tbody>
+						<tr>
+							<td>1</td>
+							<td>Souza</td>
+							<td>Cliente</td>
+							<td>Souza@gmail.com</td>
+							<td>12345678</td>
+							<td>31-12-2024</td>
+							<td class="acao">
+                                <form method="POST" style="display: inline;">
+                                    <input type="hidden" name="pedido_id" value="20">
+                                    <button class="btn-editar" type="submit">Editar</button>
+                                </form>
+
+                            </td>
+                        </tr>
+						
+					</tbody>
+					</table>
+					
+					
+        </div>
+            </div> 
+
+<!---------------------------------------------------------------------------------------- Livro -------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------- ####### -------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------- ####### -------------------------------------------------------------------->
+			
+ 		<div id="livro" class="content-panel">
                 <div class="head-title">
-                    <div class="left"><h1>Livros</h1></div>
+                    <div class="left">
+                        <h1>Painel de Livros</h1>
+                        <ul class="breadcrumb">
+                            <li><a href="#">Dashboard</a></li>
+                            <li><i class='bx bx-chevron-right' ></i></li>
+                            <li><a class="active" href="#">Painel de Livros</a></li>
+                        </ul>
+                    </div>
+					<a href="#" class="btn-download">
+						<i class='bx bxs-cloud-download' ></i>
+						<span class="text">Emitir Relatório</span>
+					</a>
                 </div>
-                <h2>Sua página de Livros</h2>
-            </div>
+                <div class="tabela_pedidos">
+				 <form action="" method="GET" class="form-filtro">
+					<div class="filtro-grupo">
+						<label for="filtro_idLivro">Filtrar por ID:</label>
+						<input type="number" id="filtro_idLivro" name="filtro_idLivro">
+					</div>
+				<div class="filtro-grupo">
+					   <label for="filtro_usuario">Filtrar por Usuário:</label>
+					   <input type="text" id="filtro_usuario" name="filtro_usuario">
+					</div>
+					<div class="filtro-grupo">
+						<label for="filtro_categoria">Filtrar por Categoria:</label>
+						<input type="text" id="filtro_categoria" name="filtro_categoria">
+					</div>
+				    <div class="filtro-grupo">
+						<label for="filtro_precoMin">Filtrar por Preço Minino:</label>
+						<input type="number" id="filtro_precoMin" name="filtro_precoMin">
+					</div>
+				    <div class="filtro-grupo">
+						<label for="filtro_precoMax">Filtrar por Preço Maximo:</label>
+						<input type="number" id="filtro_precoMax" name="filtro_precoMax">
+					</div>
+					<button type="submit">Filtrar</button>
+					<button type="reset">Reset</button>
+				</form>
+				</div>
+				
+				<div class="divTable">
+					<table>
+						<thead>
+							<tr>
+								<th>Id do Livro</th>
+								<th>Título</th>
+								<th>Categoria</th>
+								<th>Preço</th>
+								<th>Estoque</th>
+								<th>Livro</th>
+							</tr>
+						</thead>
+						
+						<tbody>
+						<tr>
+							<td>1</td>
+							<td>Um Amor cinco estrelas</td>
+							<td>Romance</td>
+							<td>R$ 50,00</td>
+							<td>100</td>
+							<td><img src="https://m.media-amazon.com/images/I/41OFW3DDZQL._SY445_SX342_.jpg" alt=""></td>
+                        </tr>
+						
+					</tbody>
+					</table>
+					
+					
+        </div>
+            </div> 
 		</main>
 		<!-- MAIN -->
 	</section>
