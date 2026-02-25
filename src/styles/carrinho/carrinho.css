@@ -1,3 +1,21 @@
+:root{
+    --white:#ffffff;
+       --cor0: #fffaf2;
+       --cor1: #E0D0B6;
+       --cor2: #DFCAB7;        
+       --cor3: #C9B2A0;        
+       --cor5: #53382a;
+       --cor4: #3E2214;
+       --black:#000000;
+   
+       --Sohne: "Sohne";
+       --Mont: "Mont";
+   }
+
+   .menu li a, .login li a, .profile-dropdown-btn span{
+    color: var(--cor4);
+   }
+
 .main{
     background-color: rgb(255, 255, 255);
 }
@@ -13,13 +31,13 @@
 .cart-container h1 {
     font-size: 2rem;
     margin-bottom: 30px;
-    color: var(--cor3, #53382A); /* Usa a cor do seu tema */
+    color: var(); 
 }
 
-/* Layout principal com Flexbox */
+
 .cart-layout {
     display: flex;
-    flex-wrap: wrap; /* Permite que o resumo vá para baixo em telas menores */
+    flex-wrap: wrap;
     gap: 30px;
 }
 
@@ -156,7 +174,7 @@
 }
 
 .action-link {
-    color: var(--cor3, #53382A);
+    color: #333;
     text-decoration: none;
 }
 .action-link i {

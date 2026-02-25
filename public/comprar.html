@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.5.1/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" media="screen and (max-device-width: 799px)" />
+    <link rel="stylesheet" href="../src/styles/global/style.css">
+    <link rel="stylesheet" href="../src/styles/comprar/comprar.css">
+    <title>Início</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="../src/assets/EditoraLogo2.png" alt="Logo">
+            </div>
+            <ul class="menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="descubra.html">Descubra</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+            <ul class="login">
+                <li><a href="#"><i class="fas fa-search"></i></a></li>
+                
+                <li><a href="carrinho.html"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a></li>
+                
+                <div class="profile-dropdown">
+                    <div onclick="toggle()" class="profile-dropdown-btn">
+                        <div class="profile-img">
+                            <i class="status-circle "></i>
+                        </div>
+                        <span>
+                            Login <i class="fa-solid fa-angle-down"></i>
+                        </span>
+                    </div>
+                    <ul class="profile-dropdown-list">
+                        <li class="profile-dropdown-list-item">
+                            <a href="login.html">
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                <span class="login-a-dropdown">Login</span>
+                            </a>
+                        </li>
+                        <li class="profile-dropdown-list-item">
+                            <a href="../private/dashboard.html">
+                                <i class="fa-solid fa-chart-line"></i>
+                                <span class="login-a-dropdown">Dashboard</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="body">
+        <div class="product-page">
+            <div class="image-gallery">
+                <div class="thumbnail" ><img id="img1" src="https://m.media-amazon.com/images/I/51dX25QxS8L._SL1005_.jpg" alt=""></div>
+                <div class="thumbnail" ><img id="img2" src="https://m.media-amazon.com/images/I/51dX25QxS8L._SL1005_.jpg" alt=""></div>
+                <div class="thumbnail" ><img id="img3" src="https://m.media-amazon.com/images/I/514ByDXbo+L._SL1300_.jpg" alt=""></div>
+                <div class="thumbnail" ><img id="img4" src="" alt=""></div>
+            </div>
+            <div class="main-image">
+                <img  id="img0" src="https://m.media-amazon.com/images/I/71xh-XoYyaL._SL1500_.jpg" alt="">
+            </div>
+            <div class="product-details">
+                <div class="product-brand" id="Autor">Teste</div>
+                <h1 class="product-title" id="Titulo">Teste</h1>
+                <div class="product-price">
+                    <span id="Preco">$750.00</span> 
+                    <span class="original-price" id="OriginalPreco">$980.00</span>
+                </div>
+                <div class="product-rating" id="Avaliacao">☆☆☆☆☆ | Add review</div>
+                <p class="product-description" id="Descricao">
+                    Donec vel odio commodo, cursus orci sed, tincidunt mauris. Donec
+                    quis mattis dui facilisis. Fusce purus ipsum, accumsan a nisl sollicitudin,
+                    sagittis tincidunt justo non porttitor.
+                </p>
+                <div class="quantity-selector">
+                    <input type="hidden" id="product-id" value="7">
+                    <input type="number" class="quantity-input" value="1" min="1" id="quantity">
+                    <button class="add-to-cart-button" onclick="addToCart()">Adicionar</button>
+                </div>
+                <div class="product-actions">
+                    <a href="index.html">Volte para o Início</a>
+                    <a href="#">Continue Comprando</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div class="footer-newsletter">
+            <h2>Inscreva-se na nossa Newsletter</h2>
+            <p>Assine hoje gratuitamente e economize 10% na sua primeira compra.</p>
+            <input type="email" placeholder="Your email">
+            <button>SUBSCRIBE</button>
+        </div>
+        
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Navegar</h3>
+                <ul>
+                    <li><a href="#">Sobre Nós</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contate-nos</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Categorias</h3>
+                <ul>
+                    <li><a href="#">Novas chegadas</a></li>
+                    <li><a href="#">Featured</a></li>
+                    <li><a href="#">Catalog</a></li>
+                    <li><a href="#">Popular Brands</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Coleção</h3>
+                <ul>
+                    <li><a href="#">Innovative</a></li>
+                    <li><a href="#">Sport</a></li>
+                    <li><a href="#">Italian</a></li>
+                    <li><a href="#">Gold</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contato</h3>
+                <address>
+                    Rua Marechal Soares de Andréia, 90 <br>
+                    Realengo, Rio de Janeiro<br>
+                    hello@sitecompany.co<br>
+                    +1-512-758-7589
+                </address>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Copyright © 2024 Editora Transformar. Todos os direitos reservados. </p>
+        </div>
+    </div>
+</body>
+<script src="../src/js/global/script.js"></script>
+</html>
